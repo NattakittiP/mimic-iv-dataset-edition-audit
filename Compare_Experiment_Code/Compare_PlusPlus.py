@@ -1,20 +1,3 @@
-# demo_trustworthiness_merged.py
-# ------------------------------------------------------------
-# Merged version:
-# - Keeps your original structure/metrics extraction style
-# - Adds best parts from Compare_Plus.py:
-#   * Config dataclass
-#   * robust binary y coercion
-#   * AUPRC metric
-#   * Optional Experiment 4: importance stability via permutation importance
-#   * Per-model AUROC hist plots w/ DEMO vertical line
-#
-# EXTRA (your request):
-# - Adds progress + ETA (download-like) reporting for long loops
-#   * Subsample loop (Exp0)
-#   * Exp4 loop
-# - Keeps everything else the same (metrics, files, flow, outputs)
-# ------------------------------------------------------------
 
 from __future__ import annotations
 
@@ -918,4 +901,5 @@ def main(cfg: Config) -> None:
 
 
 if __name__ == "__main__":
+
     main(CFG)
