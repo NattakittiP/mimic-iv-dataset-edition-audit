@@ -1,3 +1,28 @@
+"""
+This script implements:
+1) Loading aggregated delta metrics from `metrics_aggregated_deltas_demo_vs_full.csv`.
+2) Construction of a world-by-model performance matrix via pivoting
+   (rows = worlds, columns = models, values = mean AUROC scores).
+3) Conversion of performance scores into within-world model rankings
+   (higher AUROC → better rank, average ranking for ties).
+4) Pairwise world-to-world comparison using Spearman rank correlation,
+   producing a symmetric agreement matrix across all worlds.
+5) Export of the world-to-world Spearman correlation matrix to CSV for downstream analysis.
+6) Visualization of rank agreement as a heatmap:
+   - Diverging scale with fixed bounds [-1, 1].
+   - Colorbar indicating Spearman rank correlation.
+   - Readable axis labels and rotated ticks.
+7) Separate evaluation for:
+   - Full data setting (using `AUROC_mean_full`).
+   - Demo data setting (using `AUROC_mean_demo`).
+8) Automatic saving of figures as high-resolution PNG files suitable for reports or papers.
+
+Outputs:
+- world_rank_spearman_matrix_full.csv
+- fig_world_rank_spearman_heatmap_full.png
+- world_rank_spearman_matrix_demo.csv
+- fig_world_rank_spearman_heatmap_demo.png
+"""
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -52,3 +77,4 @@ build_world_rank_matrix(
     out_png="fig_world_rank_spearman_heatmap_demo.png",
     title="World-to-World Rank Agreement (Demo) using AUROC_mean_demo"
 )
+
