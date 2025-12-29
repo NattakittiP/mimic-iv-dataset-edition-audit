@@ -1,3 +1,43 @@
+"""
+This version implements:
+1) A robust paired-comparison framework between FULL and DEMO runs,
+   aligned strictly on (fold, model) to ensure valid within-fold inference.
+2) Comprehensive sanity checks for required keys and metrics,
+   with explicit reporting of dropped (unmatched) fold–model pairs.
+3) Per-model paired statistical analysis across multiple metrics, including:
+   - Mean FULL and DEMO values.
+   - Mean paired difference (FULL − DEMO).
+   - Standard deviation of paired differences.
+4) Effect size estimation using Cohen’s d for paired samples (dz),
+   providing magnitude interpretation beyond p-values.
+5) Nonparametric uncertainty quantification via bootstrap confidence intervals
+   for the mean paired difference (default 5,000 resamples).
+6) Paired hypothesis testing using:
+   - Paired t-test (when available).
+   - Wilcoxon signed-rank test with robust edge-case handling.
+7) Model ranking based on standardized PPV difference
+   (FULL − DEMO) to highlight relative performance shifts.
+8) A pooled paired analysis for the primary metric
+   (standardized PPV), aggregating all models and folds.
+9) Automatic export of all intermediate and summary tables for auditability.
+10) Visualization suite for interpretability:
+    - Per-model mean standardized PPV (FULL vs DEMO).
+    - Histogram of pooled paired differences.
+    - Per-model bootstrap CI plots for standardized PPV differences.
+11) A compact “topline” table summarizing the key results per model,
+    suitable for direct inclusion in reports or manuscripts.
+12) Lightweight metadata reporting (row counts, dropped pairs, output paths)
+    to support reproducibility and debugging.
+
+Outputs:
+- per_fold_merged_full_vs_demo.csv
+- per_model_paired_comparison.csv
+- pooled_main_metric_comparison.csv
+- plot_mean_ppvstd_full_vs_demo.png
+- hist_diff_ppvstd_pooled.png
+- plot_ci_diff_ppvstd_per_model.png
+"""
+
 import os
 import numpy as np
 import pandas as pd
@@ -273,4 +313,5 @@ print(topline.to_string(index=False))
 
 if pooled_main is not None:
     print("\n=== POOLED MAIN METRIC ===")
+
     print(pooled_main.to_string(index=False))
