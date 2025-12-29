@@ -1,11 +1,4 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
 """
-compare_demo_full_addons.py
-==========================
-ADD-ON analyses that were commonly present in older Compare_Plot / Advanced flows
-but are not in the baseline `compare_demo_full_pro.py` (v2).
-
 This file intentionally DOES NOT re-implement the core comparisons (RSCE compare,
 metrics_aggregated compare, compute_cost compare, fold-level RSCE paired tests, regression).
 It only adds:
@@ -14,14 +7,6 @@ It only adds:
   3) paired_tests.csv : delta table (align by model/metric when possible)
   4) metrics_per_fold.csv : per-metric per-model paired tests + Holm correction + summary
   5) reliability_curve_points.csv : curve distance metrics + overlay plots (top-k shifts)
-
-Assumptions:
-- Your Code.py outputs are in a single folder `--base`.
-- demo files are prefixed with `demo_`, full files with `full_`.
-
-Run (Colab):
-  !python compare_demo_full_addons.py --base /content/results --outdir /content/compare_out_addons
-
 """
 
 from __future__ import annotations
