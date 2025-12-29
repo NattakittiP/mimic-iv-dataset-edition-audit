@@ -1,13 +1,4 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
 """
-compare_demo_full_pro.py (Professor-grade, v2)
-=============================================
-Single-folder demo/full comparator for Code.py outputs.
-
-File convention (same folder):
-    demo_<suffix>.csv / .json
-    full_<suffix>.csv / .json
 
 This version addresses:
 1) Robust RSCE file detection (no mistaken "full" token in suffix).
@@ -30,9 +21,6 @@ Outputs:
 - metrics_aggregated_deltas_demo_vs_full.csv
 - compute_cost_compare.csv (+ plot)
 - paper_summary.md
-
-Run (Colab):
-  !python compare_demo_full_pro.py --base /content/results --outdir /content/compare_out --dataset_tag mortality
 
 """
 
