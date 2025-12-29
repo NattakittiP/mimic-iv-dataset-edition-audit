@@ -1,3 +1,39 @@
+"""
+This version implements:
+1) A prevalence-standardized PPV evaluation framework designed for fair comparison
+   across datasets with different outcome prevalences (FULL vs DEMO).
+2) Robust CSV loading with download-style progress bars and ETA,
+   suitable for large clinical datasets and Colab environments.
+3) Automatic target-column resolution with alias handling and fallback auto-detection,
+   plus strict coercion of labels to binary {0,1}.
+4) A unified preprocessing and modeling pipeline supporting mixed numeric/categorical data,
+   optional probability calibration (sigmoid / isotonic / none),
+   and dense-matrix fallback for models that require it.
+5) A diverse model zoo (linear, tree-based, kernel, neural, and probabilistic),
+   with an optional fast mode for quicker exploratory runs.
+6) Repeated stratified cross-validation with explicit fold tracking
+   to ensure comparability across runs.
+7) Inner cross-validation with out-of-fold predictions to determine
+   decision thresholds that achieve a fixed target sensitivity on training data.
+8) Test-set evaluation using fixed-sensitivity thresholds, producing:
+   sensitivity, specificity, observed PPV, and prevalence-standardized PPV.
+9) Explicit handling and reporting of test-set prevalence (π_test)
+   and a shared reference prevalence (π_ref) for standardization.
+10) End-to-end progress tracking with nested progress bars,
+    per-step timing, and overall ETA across folds and models.
+11) Per-fold result export enabling downstream paired statistical comparisons.
+12) Aggregation of results at the model level with means, standard deviations,
+    and standard errors for standardized PPV and related metrics.
+13) Reproducible experiment control via fixed seeds and deterministic CV splits.
+14) Side-by-side execution on FULL and DEMO datasets using the same π_ref,
+    enabling apples-to-apples PPV comparisons.
+
+Outputs:
+- ppv_std_per_fold.csv
+- ppv_std_aggregated.csv
+- Console summaries reporting target resolution, π_ref, and total runtime
+"""
+
 from __future__ import annotations
 from pathlib import Path
 from typing import Dict, Any, Tuple, Optional, List
@@ -574,4 +610,5 @@ per_fold_demo, agg_demo = run_ppv_std(
 
 display(agg_full.sort_values("ppv_std_mean", ascending=False))
 display(agg_demo.sort_values("ppv_std_mean", ascending=False))
+
 
