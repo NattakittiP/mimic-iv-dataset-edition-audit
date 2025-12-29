@@ -1,0 +1,166 @@
+{
+  "n_samples": 252,
+  "target": "label_mortality",
+  "dropped": [
+    "label_mortality"
+  ],
+  "numeric_cols": [
+    "anchor_age",
+    "lab_50818",
+    "lab_50820",
+    "lab_50868",
+    "lab_50882",
+    "lab_50893",
+    "lab_50902",
+    "lab_50912",
+    "lab_50931",
+    "lab_50934",
+    "lab_50947",
+    "lab_50960",
+    "lab_50970",
+    "lab_50971",
+    "lab_50983",
+    "lab_51006",
+    "lab_51221",
+    "lab_51222",
+    "lab_51237",
+    "lab_51248",
+    "lab_51249",
+    "lab_51250",
+    "lab_51265",
+    "lab_51274",
+    "lab_51275",
+    "lab_51277",
+    "lab_51279",
+    "lab_51301",
+    "lab_51678",
+    "lab_52172"
+  ],
+  "categorical_cols": [
+    "gender",
+    "race",
+    "marital_status",
+    "insurance",
+    "admission_type",
+    "admission_location"
+  ],
+  "seed": 42,
+  "folds": 5,
+  "repeats": 3,
+  "calibrate": null,
+  "compute_shap": true,
+  "shap_samples": 250,
+  "worlds": [
+    {
+      "name": "WA_clean",
+      "kind": "clean",
+      "params": {},
+      "severity": 0
+    },
+    {
+      "name": "WB_noise_outliers",
+      "kind": "noise_outliers",
+      "params": {
+        "std_fraction": 0.2,
+        "outlier_frac": 0.02
+      },
+      "severity": 1
+    },
+    {
+      "name": "WC_missingness",
+      "kind": "missingness",
+      "params": {
+        "base_p": 0.1,
+        "extra_p": 0.15
+      },
+      "severity": 2
+    },
+    {
+      "name": "WD_shift",
+      "kind": "shift",
+      "params": {
+        "shift_scale": 0.3
+      },
+      "severity": 3
+    },
+    {
+      "name": "WE_surrogate_corrupt",
+      "kind": "surrogate",
+      "params": {
+        "gamma": 0.5
+      },
+      "severity": 4
+    },
+    {
+      "name": "WF_nonlinear",
+      "kind": "nonlinear",
+      "params": {
+        "alpha": 0.6
+      },
+      "severity": 5
+    },
+    {
+      "name": "WH_subgroup_shift",
+      "kind": "subgroup_shift",
+      "params": {
+        "shift_scale": 0.35
+      },
+      "severity": 6
+    },
+    {
+      "name": "WI_prevalence_shift",
+      "kind": "prevalence_shift",
+      "params": {
+        "target_prev": 0.35
+      },
+      "severity": 7
+    },
+    {
+      "name": "WJ_concept_drift",
+      "kind": "concept_drift",
+      "params": {
+        "k": 3,
+        "shift_scale": 0.35
+      },
+      "severity": 8
+    },
+    {
+      "name": "WG_label_noise",
+      "kind": "label_noise",
+      "params": {
+        "eta": 0.1
+      },
+      "severity": 9
+    }
+  ],
+  "platform": {
+    "python": "3.12.12",
+    "system": "Linux",
+    "release": "6.6.105+",
+    "machine": "x86_64"
+  },
+  "package_versions": {
+    "numpy": "2.0.2",
+    "pandas": "2.2.2",
+    "scikit-learn": "1.6.1",
+    "scipy": "1.16.3",
+    "matplotlib": "3.10.0",
+    "shap": "0.50.0"
+  },
+  "component_ablation": {
+    "S": [
+      "S_drop",
+      "S_ratio"
+    ],
+    "C": [
+      "C_exp",
+      "C_linear"
+    ],
+    "E": [
+      "E_cos",
+      "E_rank",
+      "E_jaccard",
+      "E_mix"
+    ]
+  }
+}

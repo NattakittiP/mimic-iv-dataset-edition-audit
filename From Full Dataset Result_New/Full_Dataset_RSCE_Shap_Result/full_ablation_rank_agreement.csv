@@ -1,0 +1,17 @@
+variant,spearman_rank_vs_ref,kendall_rank_vs_ref
+S_drop|C_exp|E_mix,1.0,1.0
+S_drop|C_exp|E_cos,1.0,1.0
+S_drop|C_exp|E_rank,1.0,1.0
+S_drop|C_exp|E_jaccard,1.0,1.0
+S_ratio|C_exp|E_mix,1.0,1.0
+S_ratio|C_exp|E_cos,1.0,1.0
+S_ratio|C_exp|E_rank,1.0,1.0
+S_ratio|C_exp|E_jaccard,1.0,1.0
+S_drop|C_linear|E_mix,0.9642857142857145,0.9047619047619049
+S_drop|C_linear|E_cos,0.9642857142857145,0.9047619047619049
+S_drop|C_linear|E_rank,0.9642857142857145,0.9047619047619049
+S_ratio|C_linear|E_mix,0.9642857142857145,0.9047619047619049
+S_ratio|C_linear|E_cos,0.9642857142857145,0.9047619047619049
+S_ratio|C_linear|E_rank,0.9642857142857145,0.9047619047619049
+S_drop|C_linear|E_jaccard,0.9285714285714288,0.8095238095238096
+S_ratio|C_linear|E_jaccard,0.9285714285714288,0.8095238095238096
