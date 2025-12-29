@@ -1,4 +1,36 @@
+"""
+This version addresses:
+1) Merged implementation that preserves the original code structure while incorporating improvements from the alternative version.
+2) Centralized configuration via a Config dataclass (paths, seeds, metrics, calibration options, experiment toggles).
+3) Automatic target-column inference with sensible fallbacks, plus an explicit override option.
+4) Robust target coercion to binary {0,1}, supporting boolean, numeric, and two-class string labels.
+5) Expanded evaluation metrics including AUROC, AUPRC, LogLoss, Brier score, and ECE.
+6) Unified preprocessing pipeline:
+   - Numerical features: median imputation + standardization.
+   - Categorical features: most-frequent imputation + one-hot encoding with unknown handling.
+7) Out-of-fold prediction using StratifiedKFold, with safe fallback when class counts are too small for CV.
+8) Optional probability calibration (sigmoid / isotonic / none) with adaptive fold selection to avoid calibration failures.
+9) Stratified subsampling with minimum-per-class constraints and retry logic to ensure valid samples.
+10) Progress indicators with ETA for long-running loops (subsampling and Experiment 4).
+11) Optional Experiment 4: feature-importance stability analysis
+    - Permutation importance (ROC-AUC scoring) on a logistic-regression pipeline.
+    - Stability quantified via Spearman rank correlation against the DEMO reference.
+12) Additional visualizations:
+    - AUROC distribution histograms per model from subsampling, with DEMO reference lines.
+    - Histogram of Spearman correlations for importance stability (Experiment 4).
 
+Outputs:
+- full_reference_metrics.csv
+- demo_metrics.csv
+- subsample_metrics_long.csv
+- exp1_demo_percentiles.csv
+- exp2_rank_stability.csv
+- exp3_decision_stability.csv
+- exp4_importance_stability.csv (if enabled)
+- plots/
+  - auroc_hist_{model}.png
+  - exp4_importance_stability_hist.png
+"""
 from __future__ import annotations
 
 import warnings
@@ -903,3 +935,4 @@ def main(cfg: Config) -> None:
 if __name__ == "__main__":
 
     main(CFG)
+
