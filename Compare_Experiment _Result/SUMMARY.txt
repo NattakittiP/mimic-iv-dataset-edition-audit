@@ -1,0 +1,38 @@
+================ SUMMARY ================
+PRIMARY_METRIC: AUROC
+
+[Full reference metrics]
+           model    AUROC    AUPRC  LogLoss    Brier      ECE
+         SVC_RBF 0.997456 0.946712 0.016425 0.004218 0.002968
+     Logistic_L2 0.996389 0.983854 0.005894 0.000931 0.001454
+    RandomForest 0.994830 0.979471 0.005687 0.000837 0.000740
+GradientBoosting 0.993775 0.973333 0.006604 0.001089 0.001435
+             MLP 0.993597 0.971120 0.010855 0.002048 0.002267
+      ExtraTrees 0.992331 0.977645 0.005408 0.000789 0.000590
+      GaussianNB 0.863440 0.244222 0.089297 0.021678 0.005550
+
+[Demo metrics]
+           model    AUROC    AUPRC  LogLoss    Brier      ECE
+    RandomForest 0.737195 0.695509 0.620432 0.214368 0.085765
+GradientBoosting 0.732194 0.675610 0.612541 0.211157 0.077894
+         SVC_RBF 0.646344 0.598515 0.667914 0.237534 0.037887
+      ExtraTrees 0.623552 0.566576 0.673190 0.240054 0.038881
+     Logistic_L2 0.593669 0.541470 0.678511 0.242808 0.022632
+      GaussianNB 0.562710 0.518183 0.691213 0.248792 0.063197
+             MLP 0.545362 0.504085 0.688110 0.247466 0.033321
+
+[Decision stability]
+primary_metric full_best_model demo_best_model  demo_best_matches_full  subsample_P(best_matches_full)  subsample_q025  subsample_q50  subsample_q975  subsample_P(full_best_in_top1)  subsample_P(full_best_in_top2)  subsample_P(full_best_in_top3)
+         AUROC         SVC_RBF    RandomForest                       0                           0.002             0.0            0.0             0.0                           0.002                           0.007         
+                  0.037
+
+[Importance stability]
+count    879.000000
+mean      -0.050745
+std        0.174276
+min       -0.465985
+25%       -0.186481
+50%       -0.040825
+75%        0.061237
+max        0.425735
+========================================

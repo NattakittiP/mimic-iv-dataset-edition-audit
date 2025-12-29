@@ -1,0 +1,2 @@
+metric,n_pairs,mean_full,mean_demo,mean_diff_full_minus_demo,boot_ci_low,boot_ci_high,p_ttest,p_wilcoxon,cohen_d_paired
+ppv_standardized_pi_ref,103,0.879429898061753,0.032943090618430954,0.8465348472719204,0.7910243316461218,0.8983084554071561,5.861800040061374e-53,1.24677657246145e-18,

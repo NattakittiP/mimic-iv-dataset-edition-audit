@@ -1,0 +1,2 @@
+variant,spearman_rank_vs_ref_demo,spearman_rank_vs_ref_full,spearman_rank_vs_ref_delta,kendall_rank_vs_ref_demo,kendall_rank_vs_ref_full,kendall_rank_vs_ref_delta
+S_drop|C_exp|E_mix,1.0,1.0,0.0,1.0,1.0,0.0

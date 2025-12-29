@@ -1,0 +1,3 @@
+model,weighted_L1,max_abs,n_bins
+RandomForest,0.5862684703226168,1.0,7428
+Logistic_L2,0.36221243865795133,1.0,12256
