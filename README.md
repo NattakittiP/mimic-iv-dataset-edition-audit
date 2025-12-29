@@ -54,8 +54,8 @@ To isolate the effect of *dataset edition alone*, we enforce **strict pipeline c
 | Evaluation metrics | Identical |
 
 **The only difference between runs is the dataset edition**:
-- MIMIC-IV Demo (v2.2): 252 admissions
-- MIMIC-IV Full (v3.1): 14,081 admissions
+- MIMIC-IV Demo (v2.2): 252 admissions (`Clear dataset/demo_analytic_dataset_mortality_all_admissions.csv`)
+- MIMIC-IV Full (v3.1): 14,081 admissions (`Clear dataset/full_analytic_dataset_mortality_all_admissions.csv`)
 
 Any observed divergence therefore reflects **dataset-induced effects**, not implementation artifacts.
 
