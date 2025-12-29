@@ -1,3 +1,55 @@
+"""
+This version implements:
+1) A full RSCE benchmarking pipeline with multi-world perturbations, repeated stratified CV,
+   calibration-aware evaluation, and comprehensive statistical testing.
+2) Deterministic experiment control via global seeding, hashed world-specific RNGs,
+   and full environment / package version logging.
+3) Robust preprocessing with numeric and categorical pipelines
+   (median / most-frequent imputation, scaling, one-hot encoding, dense fallback when required).
+4) A diverse model zoo (linear, tree-based, kernel, neural, probabilistic),
+   optionally wrapped with probability calibration (sigmoid / isotonic).
+5) A rich set of realism-inspired “worlds” simulating noise, missingness, distribution shift,
+   surrogate corruption, nonlinearity, subgroup shift, prevalence shift, concept drift,
+   and label noise, each with explicit severity levels.
+6) Extensive evaluation metrics per fold, model, and world:
+   AUROC, Brier, LogLoss, ECE, adaptive ECE, and full Brier decomposition (REL / RES / UNC).
+7) Bootstrap confidence intervals for aggregated metrics at the world level.
+8) RSCE component ablations:
+   - R: clean-world discrimination (AUROC).
+   - S: robustness to covariate shifts (drop- and ratio-based formulations).
+   - C: calibration stability across worlds (exponential and linear forms).
+   - E: explainability stability using SHAP (cosine, rank, Jaccard, and mixed scores).
+9) SHAP-based explainability analysis:
+   - Cross-world feature attribution stability.
+   - Summary, bar, and dependence plots (saved for selected folds/models).
+10) Aggregation of RSCE scores across models with configurable weights,
+    plus sensitivity analysis over weight choices and perturbation severity.
+11) Ranking stability analysis across alternative RSCE formulations
+    using Spearman and Kendall rank correlations.
+12) Paired statistical testing between models on per-fold RSCE
+    (Wilcoxon signed-rank and paired t-test with Holm correction).
+13) Reliability diagram aggregation and visualization across folds and worlds.
+14) Detailed compute-cost accounting (fit, prediction, SHAP, total time) with aggregation.
+15) Progress tracking with nested tqdm bars and ETA for long-running experiments.
+
+Outputs:
+- schema.json
+- metrics_per_fold.csv
+- metrics_aggregated.csv
+- ablation_components_per_fold.csv
+- ablation_summary.csv
+- ablation_rank_agreement.csv
+- rsce_scores.csv
+- paired_tests.csv
+- compute_cost_per_fold.csv
+- compute_cost.csv
+- reliability_curve_points.csv
+- reliability_diagram.png
+- rsce_bar.png
+- sensitivity_weights.png
+- sensitivity_severity.png
+- shap_plots
+"""
 from __future__ import annotations
 
 import argparse
@@ -1320,4 +1372,5 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+
 
