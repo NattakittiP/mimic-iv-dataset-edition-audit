@@ -405,11 +405,10 @@ by (seed, null mode, draw index), so results do not depend on order, parallelism
 │   │   ├── trustworthiness_selection_regret.py
 │   │   ├── rsce_rsc_rank_agreement.py
 │   │   └── synthesize_cross_domain.py
-│   ├── 04_ppv/
-│   │   ├── run_ppv.py                  prevalence-standardized PPV
-│   │   └── compare_ppv.py
-├── Results/                    aggregate results of the reported runs (Section 8)
-└── figures/                    Figures 1 to 5 (PNG, 600 dpi), source data, manifest
+│   └── 04_ppv/
+│       ├── run_ppv.py                  prevalence-standardized PPV
+│       └── compare_ppv.py
+└── Results/                    aggregate results of the reported runs (Section 8)
 ```
 
 `full_lab_itemids.csv` contains only a header row (the 30 `lab_<itemid>` column names of the Full hosp
@@ -522,7 +521,7 @@ cd Pipeline
 python run_full_pipeline.py --list         # show the plan
 python run_full_pipeline.py                # prepare Demo and Full, subset checks, feasibility estimates; stops before the long runs
 python run_full_pipeline.py --run_full     # everything: RSCE, PPV, comparisons, both trustworthiness pools,
-                                           # Table 1, cross-track synthesis, derived analyses, figures
+                                           # Table 1, cross-track synthesis, derived analyses
 ```
 
 Stages, in order: `prepare`, `checks`, `estimate`, `rsce`, `ppv`, `compare`, `extras`. A single stage can
@@ -635,8 +634,7 @@ Run on a clean copy of this repository (Linux, Python 3.13, the package versions
 * **Level A.** All 50 comparison, synthesis and derived CSV/Markdown outputs recomputed from the shipped
   `Results/` (Section 7.1) agree with the shipped files (identical strings; numeric columns equal within a
   relative tolerance of 1e-9). The `_base` folders rebuilt by `make_compare_base.py` are byte-identical
-  copies of the RSCE outputs. `make_figures.py` runs to completion with all of its 105 internal cross-file
-  consistency checks passing, and reproduces the figure source data.
+  copies of the RSCE outputs.
 * **Level B, data preparation.** Rebuilding the Demo datasets from the open-access Demo releases with
   `run_full_pipeline.py --demo_only --stage prepare` reproduces the ED Demo analytic dataset byte for
   byte and the hosp Demo dataset value for value (same 245 × 43 table, same column order; the shipped run

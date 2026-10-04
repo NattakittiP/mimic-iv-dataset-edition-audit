@@ -6,8 +6,8 @@ run_full_pipeline.py
 One-command orchestrator for the whole Pipeline/ folder: runs every stage in
 the order documented in the repository README.md (prepare -> feasibility
 check -> RSCE -> PPV -> Demo-vs-Full comparisons (incl. the ICU-patient null)
--> cross-domain synthesis -> Table 1 -> derived analyses -> figures ->
-reproducibility snapshot), for BOTH the Hospital module and the ED module.
+-> cross-domain synthesis -> Table 1 -> derived analyses -> reproducibility
+snapshot), for BOTH the Hospital module and the ED module.
 
 Written as a plain Python script (not a shell/bat script) so it runs
 identically regardless of your terminal (PowerShell, cmd, bash, ...) -- just:
@@ -471,7 +471,7 @@ def stage_compare(a) -> None:
 
 
 def stage_extras(a) -> None:
-    banner("STAGE: extras (Table 1, cross-domain synthesis, derived analyses, figures, environment snapshot)")
+    banner("STAGE: extras (Table 1, cross-domain synthesis, derived analyses, environment snapshot)")
 
     ds_args = []
     hosp_demo_csv = a.out_root / "hosp_demo" / "demo_analytic_dataset_mortality_all_admissions.csv"
@@ -515,17 +515,6 @@ def stage_extras(a) -> None:
              "--results", str(a.out_root)], args_ns=a)
     else:
         log("[SKIP] RSCE_RSC rank agreement needs Demo and Full RSCE outputs of both domains; skipping.")
-
-    # Figures 1 to 5 (need the Full-scale comparison outputs).
-    if (a.out_root / "compare" / "cross_domain" / "cross_domain_summary.csv").exists() and \
-       all((a.out_root / "compare" / d / "ppv" / "per_model_full_vs_demo_unpaired.csv").exists() and
-           (a.out_root / "compare" / d / "_base" / "full_rsce_per_fold.csv").exists()
-           for d in ("hosp", "ed")):
-        run([PY, script("05_figures", "make_figures.py"),
-             "--root", str(a.out_root.parent), "--outdir", str(a.out_root.parent / "figures")], args_ns=a)
-    else:
-        log("[SKIP] figures need the Full-scale comparison outputs, incl. Results/compare/<track>/_base "
-            "(run with --run_full first, or make_compare_base.py); skipping.")
 
     note = "final Full run (all modules)" if a.run_full and not a.demo_only else "Demo-scale run"
     run([PY, script("capture_environment.py"),
