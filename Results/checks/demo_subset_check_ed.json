@@ -1,0 +1,11 @@
+{
+  "module": "ed",
+  "demo_dir": "<PROJECT_ROOT>\\MIMIC_Dataset\\MIMIC-IV-ED-Demo-2.2",
+  "full_dir": "<PROJECT_ROOT>\\MIMIC_Dataset\\MIMIC-IV-ED-Full-2.2",
+  "n_demo_patients": 64,
+  "n_full_patients": 205504,
+  "n_overlap": 64,
+  "n_demo_only": 0,
+  "pct_demo_patients_in_full": 100.0,
+  "demo_is_strict_subset_of_full": true
+}

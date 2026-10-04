@@ -1,0 +1,25 @@
+# MIMIC-IV source data: never commit (PhysioNet data use agreement)
+MIMIC_Dataset/*
+!MIMIC_Dataset/README.md
+
+# Row-level analytic datasets derived from MIMIC-IV
+Results/**/*_analytic_dataset_*.csv
+Results/**/*analytic_dataset*.csv
+Results/checks/full_icu_subject_ids.csv
+
+# Regenerable or machine-specific run artefacts
+Results/**/_checkpoint/
+Results/**/_logs/
+Results/**/*_estimate/
+Results/compare/*/_base/
+Results/**/plots/
+Results/**/*.png
+Results/run_full_pipeline.log
+Results/**/comparison_summary.md
+Results/**/paired_files_manifest.csv
+
+# Python
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.venv/

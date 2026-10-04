@@ -1,0 +1,90 @@
+{
+  "script_version": "trust-v2.2-2026-09-23",
+  "target": "label_mortality",
+  "full_n": 331204,
+  "full_pos": 7302,
+  "demo_n": 245,
+  "demo_pos": 14,
+  "subsample_n": 245,
+  "min_per_class": 5,
+  "n_subsamples": 1000,
+  "demo_importance_spearman_vs_full": -0.2644775062437454,
+  "null_pool": "icu",
+  "pool": {
+    "icu_subjects_path": "<PROJECT_ROOT>\\Results\\checks\\full_icu_subject_ids.csv",
+    "icu_subjects_sha256": "1309de363b3921006741a034daa2495912816c1696a18bbecdd59f5baed61d5c",
+    "n_icu_subjects_in_list": 50920,
+    "pool_rows": 150471,
+    "pool_patients": 49733,
+    "pool_pos": 6321,
+    "pool_prevalence": 0.04200809458300935,
+    "pool_fraction_of_full_rows": 0.4543151652757817,
+    "demo_rows_in_pool_fraction": 1.0
+  },
+  "demo_importance_spearman_vs_full_icu": -0.30893248824347846,
+  "config": {
+    "full_path": "<PROJECT_ROOT>\\Results\\hosp_full\\full_analytic_dataset_mortality_all_admissions.csv",
+    "demo_path": "<PROJECT_ROOT>\\Results\\hosp_demo\\demo_analytic_dataset_mortality_all_admissions.csv",
+    "outdir": "<PROJECT_ROOT>\\Results\\compare\\hosp\\trustworthiness_icu",
+    "plots_dir": "<PROJECT_ROOT>\\Results\\compare\\hosp\\trustworthiness_icu\\plots",
+    "n_subsamples": 1000,
+    "subsample_n": null,
+    "n_splits": 5,
+    "seed": 42,
+    "target_col": "label_mortality",
+    "calibration": "sigmoid",
+    "calibration_cv": 3,
+    "primary_metric": "AUROC",
+    "topk_list": [
+      1,
+      2,
+      3
+    ],
+    "run_importance_stability": true,
+    "perm_repeats": 10,
+    "importance_test_cap": 20000,
+    "progress_every": 10,
+    "min_per_class_in_subsample": null,
+    "subsample_max_retries": 200,
+    "group_col": "subject_id",
+    "cv_mode": "group",
+    "svc_max_train_n": 20000,
+    "null_modes": [
+      "random",
+      "prevalence_matched"
+    ],
+    "n_jobs": 9,
+    "null_pool": "icu",
+    "icu_subjects_path": "<PROJECT_ROOT>\\Results\\checks\\full_icu_subject_ids.csv"
+  },
+  "null": {
+    "random": {
+      "n_runs": 1000,
+      "acceptance_rate": 0.9765625,
+      "n_rows_mean": 248.718,
+      "n_pos_mean": 10.659,
+      "n_pos_min": 5,
+      "n_pos_max": 23,
+      "prevalence_mean": 0.04289178298135837,
+      "demo_prevalence": 0.05714285714285714,
+      "n_patients_mean": 82.324,
+      "runs_with_nan_metric": 0,
+      "model_folds_uncalibrated": 0,
+      "model_folds_failed": 0
+    },
+    "prevalence_matched": {
+      "n_runs": 1000,
+      "acceptance_rate": 1.0,
+      "n_rows_mean": 248.486,
+      "n_pos_mean": 14.0,
+      "n_pos_min": 14,
+      "n_pos_max": 14,
+      "prevalence_mean": 0.05636921637309366,
+      "demo_prevalence": 0.05714285714285714,
+      "n_patients_mean": 81.778,
+      "runs_with_nan_metric": 0,
+      "model_folds_uncalibrated": 0,
+      "model_folds_failed": 0
+    }
+  }
+}

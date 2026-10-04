@@ -1,0 +1,11 @@
+{
+  "module": "hosp",
+  "demo_dir": "<PROJECT_ROOT>\\MIMIC_Dataset\\MIMIC-IV-Demo-2.2",
+  "full_dir": "<PROJECT_ROOT>\\MIMIC_Dataset\\MIMIC-IV-Full-2.2",
+  "n_demo_patients": 100,
+  "n_full_patients": 299712,
+  "n_overlap": 100,
+  "n_demo_only": 0,
+  "pct_demo_patients_in_full": 100.0,
+  "demo_is_strict_subset_of_full": true
+}

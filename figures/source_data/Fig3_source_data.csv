@@ -1,0 +1,17 @@
+figure,domain,model,rank_full,rank_demo,RSCE_full,RSCE_demo,source,spearman,kendall
+Fig3a,hosp,MLP,1.0,7.0,0.9313988339740163,0.7575443615709844,Results/compare/hosp/rsce_comparison_demo_vs_full.csv,,
+Fig3a,hosp,Logistic_L2,5.0,6.0,0.9236743791138328,0.7967468415005661,Results/compare/hosp/rsce_comparison_demo_vs_full.csv,,
+Fig3a,hosp,GradientBoosting,3.0,4.0,0.9304691669211956,0.8133108108401166,Results/compare/hosp/rsce_comparison_demo_vs_full.csv,,
+Fig3a,hosp,ExtraTrees,2.0,2.0,0.9311772999535703,0.8336189132859054,Results/compare/hosp/rsce_comparison_demo_vs_full.csv,,
+Fig3a,hosp,GaussianNB,7.0,5.0,0.8860498448731335,0.7994674272380364,Results/compare/hosp/rsce_comparison_demo_vs_full.csv,,
+Fig3a,hosp,RandomForest,4.0,1.0,0.927718695764225,0.8464022540101183,Results/compare/hosp/rsce_comparison_demo_vs_full.csv,,
+Fig3a,hosp,SVC_RBF,6.0,3.0,0.8912784387707584,0.8295823308485507,Results/compare/hosp/rsce_comparison_demo_vs_full.csv,,
+Fig3a,hosp,_agreement_,,,,,Results/compare/hosp/rank_agreement.csv,-0.07142857142857144,-0.04761904761904762
+Fig3b,ed,GradientBoosting,1.0,5.0,0.8938341137605921,0.8017104057091786,Results/compare/ed/rsce_comparison_demo_vs_full.csv,,
+Fig3b,ed,MLP,5.0,6.0,0.8784090465829062,0.7938687559745529,Results/compare/ed/rsce_comparison_demo_vs_full.csv,,
+Fig3b,ed,SVC_RBF,6.0,7.0,0.8722260079419277,0.7929122001689513,Results/compare/ed/rsce_comparison_demo_vs_full.csv,,
+Fig3b,ed,RandomForest,3.0,3.0,0.8926607985346938,0.8330414658740903,Results/compare/ed/rsce_comparison_demo_vs_full.csv,,
+Fig3b,ed,ExtraTrees,4.0,2.0,0.8918226037132992,0.8330676391977194,Results/compare/ed/rsce_comparison_demo_vs_full.csv,,
+Fig3b,ed,Logistic_L2,2.0,1.0,0.8927954682299111,0.8443573608395477,Results/compare/ed/rsce_comparison_demo_vs_full.csv,,
+Fig3b,ed,GaussianNB,7.0,4.0,0.8390662014942118,0.814363382838887,Results/compare/ed/rsce_comparison_demo_vs_full.csv,,
+Fig3b,ed,_agreement_,,,,,Results/compare/ed/rank_agreement.csv,0.42857142857142866,0.33333333333333337

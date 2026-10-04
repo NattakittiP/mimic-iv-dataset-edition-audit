@@ -1,0 +1,5 @@
+domain,score,full_leader,demo_leader,full_leader_rank_on_demo,demo_leader_rank_on_full,spearman_rho,kendall_tau,full_order,demo_order
+hosp,RSCE_full,MLP,RandomForest,7,4,-0.07142857142857144,-0.04761904761904762,MLP > ExtraTrees > GradientBoosting > RandomForest > Logistic_L2 > SVC_RBF > GaussianNB,RandomForest > ExtraTrees > SVC_RBF > GradientBoosting > GaussianNB > Logistic_L2 > MLP
+hosp,RSCE_RSC,MLP,RandomForest,7,4,-0.3571428571428572,-0.23809523809523814,MLP > ExtraTrees > GradientBoosting > RandomForest > Logistic_L2 > SVC_RBF > GaussianNB,RandomForest > SVC_RBF > ExtraTrees > GaussianNB > GradientBoosting > Logistic_L2 > MLP
+ed,RSCE_full,GradientBoosting,Logistic_L2,5,2,0.42857142857142866,0.33333333333333337,GradientBoosting > Logistic_L2 > RandomForest > ExtraTrees > MLP > SVC_RBF > GaussianNB,Logistic_L2 > ExtraTrees > RandomForest > GaussianNB > GradientBoosting > MLP > SVC_RBF
+ed,RSCE_RSC,ExtraTrees,Logistic_L2,2,4,0.21428571428571433,0.14285714285714288,ExtraTrees > GradientBoosting > RandomForest > Logistic_L2 > MLP > SVC_RBF > GaussianNB,Logistic_L2 > ExtraTrees > RandomForest > GaussianNB > MLP > SVC_RBF > GradientBoosting

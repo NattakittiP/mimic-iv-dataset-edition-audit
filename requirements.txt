@@ -1,0 +1,14 @@
+# Versions recorded in Results/environment_lock.json for the reported runs (Python 3.11.16).
+numpy==2.4.6
+pandas==3.0.5
+scipy==1.17.1
+scikit-learn==1.9.1
+matplotlib==3.11.1
+statsmodels==0.15.0
+shap==0.51.0
+tqdm==4.70.1
+tabulate==0.10.0
+# Not pinned in the environment lock (installed as dependencies of the packages above):
+joblib
+threadpoolctl
+Pillow

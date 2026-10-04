@@ -1,0 +1,3 @@
+summary,primary_metric,spearman_rank_corr,demo_spearman_percentile_in_null,p_two_sided_empirical,top1_overlap,top2_overlap,top3_overlap,n_null_valid,spearman_mean,spearman_q025,spearman_q50,spearman_q975,top1_overlap_mean,top1_overlap_q025,top1_overlap_q50,top1_overlap_q975,top2_overlap_mean,top2_overlap_q025,top2_overlap_q50,top2_overlap_q975,top3_overlap_mean,top3_overlap_q025,top3_overlap_q50,top3_overlap_q975
+demo_vs_full,AUROC,0.07142857142857144,61.5,0.8191808191808192,0.0,0.0,0.3333333333333333,,,,,,,,,,,,,,,,,
+subsample_vs_full_distribution,AUROC,,,,,,,1000.0,-0.0020166447308956233,-0.5714285714285715,0.0,0.7142857142857144,0.028,0.0,0.0,1.0,0.158,0.0,0.0,0.5,0.42633333333333323,0.0,0.3333333333333333,1.0

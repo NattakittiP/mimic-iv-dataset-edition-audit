@@ -1,0 +1,338 @@
+{
+  "n_samples": 245,
+  "target": "label_mortality",
+  "dropped": [
+    "anchor_year",
+    "anchor_year_group",
+    "discharge_location",
+    "hadm_id",
+    "label_mortality",
+    "subject_id"
+  ],
+  "numeric_cols": [
+    "anchor_age",
+    "lab_50820",
+    "lab_50861",
+    "lab_50868",
+    "lab_50878",
+    "lab_50882",
+    "lab_50893",
+    "lab_50902",
+    "lab_50912",
+    "lab_50931",
+    "lab_50934",
+    "lab_50947",
+    "lab_50960",
+    "lab_50970",
+    "lab_50971",
+    "lab_50983",
+    "lab_51006",
+    "lab_51221",
+    "lab_51222",
+    "lab_51237",
+    "lab_51248",
+    "lab_51249",
+    "lab_51250",
+    "lab_51265",
+    "lab_51274",
+    "lab_51275",
+    "lab_51277",
+    "lab_51279",
+    "lab_51301",
+    "lab_51678",
+    "lab_52172"
+  ],
+  "categorical_cols": [
+    "gender",
+    "race",
+    "marital_status",
+    "insurance",
+    "admission_type",
+    "admission_location"
+  ],
+  "seed": 42,
+  "folds": 5,
+  "repeats": 3,
+  "calibrate": null,
+  "compute_shap": true,
+  "shap_samples": 50,
+  "cv_mode": "group",
+  "group_col": "subject_id",
+  "excluded_models": [],
+  "model_params": {
+    "Logistic_L2": {
+      "class": "LogisticRegression",
+      "params": {
+        "C": 1.0,
+        "class_weight": null,
+        "dual": false,
+        "fit_intercept": true,
+        "intercept_scaling": 1,
+        "l1_ratio": 0.0,
+        "max_iter": 5000,
+        "n_jobs": null,
+        "penalty": "deprecated",
+        "random_state": 42,
+        "solver": "lbfgs",
+        "tol": 0.0001,
+        "verbose": 0,
+        "warm_start": false
+      }
+    },
+    "RandomForest": {
+      "class": "RandomForestClassifier",
+      "params": {
+        "bootstrap": true,
+        "ccp_alpha": 0.0,
+        "class_weight": "balanced_subsample",
+        "criterion": "gini",
+        "max_depth": null,
+        "max_features": "sqrt",
+        "max_leaf_nodes": null,
+        "max_samples": null,
+        "min_impurity_decrease": 0.0,
+        "min_samples_leaf": 1,
+        "min_samples_split": 2,
+        "min_weight_fraction_leaf": 0.0,
+        "monotonic_cst": null,
+        "n_estimators": 1200,
+        "n_jobs": -1,
+        "oob_score": false,
+        "random_state": 42,
+        "verbose": 0,
+        "warm_start": false
+      }
+    },
+    "ExtraTrees": {
+      "class": "ExtraTreesClassifier",
+      "params": {
+        "bootstrap": false,
+        "ccp_alpha": 0.0,
+        "class_weight": "balanced_subsample",
+        "criterion": "gini",
+        "max_depth": null,
+        "max_features": "sqrt",
+        "max_leaf_nodes": null,
+        "max_samples": null,
+        "min_impurity_decrease": 0.0,
+        "min_samples_leaf": 1,
+        "min_samples_split": 2,
+        "min_weight_fraction_leaf": 0.0,
+        "monotonic_cst": null,
+        "n_estimators": 1200,
+        "n_jobs": -1,
+        "oob_score": false,
+        "random_state": 42,
+        "verbose": 0,
+        "warm_start": false
+      }
+    },
+    "GradientBoosting": {
+      "class": "GradientBoostingClassifier",
+      "params": {
+        "ccp_alpha": 0.0,
+        "criterion": "deprecated",
+        "init": null,
+        "learning_rate": 0.03,
+        "loss": "log_loss",
+        "max_depth": 3,
+        "max_features": null,
+        "max_leaf_nodes": null,
+        "min_impurity_decrease": 0.0,
+        "min_samples_leaf": 1,
+        "min_samples_split": 2,
+        "min_weight_fraction_leaf": 0.0,
+        "n_estimators": 700,
+        "n_iter_no_change": null,
+        "random_state": 42,
+        "subsample": 1.0,
+        "tol": 0.0001,
+        "validation_fraction": 0.1,
+        "verbose": 0,
+        "warm_start": false
+      }
+    },
+    "SVC_RBF": {
+      "class": "SVC",
+      "params": {
+        "C": 3.0,
+        "break_ties": false,
+        "cache_size": 200,
+        "class_weight": null,
+        "coef0": 0.0,
+        "decision_function_shape": "ovr",
+        "degree": 3,
+        "gamma": "scale",
+        "kernel": "rbf",
+        "max_iter": -1,
+        "probability": true,
+        "random_state": 42,
+        "shrinking": true,
+        "tol": 0.001,
+        "verbose": false
+      }
+    },
+    "MLP": {
+      "class": "EarlyStoppedMLP",
+      "params": {
+        "alpha": 0.0001,
+        "batch_size": "auto",
+        "hidden_layer_sizes": [
+          256,
+          128,
+          64
+        ],
+        "learning_rate_init": 0.001,
+        "max_iter": 2500,
+        "n_iter_no_change": 10,
+        "random_state": 42,
+        "tol": 0.0001,
+        "validation_fraction": 0.1
+      }
+    },
+    "GaussianNB": {
+      "class": "GaussianNB",
+      "params": {
+        "priors": null,
+        "var_smoothing": 1e-09
+      }
+    }
+  },
+  "svc_max_train_n": 20000,
+  "estimate_only": false,
+  "requested_folds_repeats": [
+    5,
+    3
+  ],
+  "worlds": [
+    {
+      "name": "WA_clean",
+      "kind": "clean",
+      "params": {},
+      "severity": 0
+    },
+    {
+      "name": "WB_noise_outliers",
+      "kind": "noise_outliers",
+      "params": {
+        "std_fraction": 0.2,
+        "outlier_frac": 0.02
+      },
+      "severity": 1
+    },
+    {
+      "name": "WC_missingness",
+      "kind": "missingness",
+      "params": {
+        "base_p": 0.1,
+        "extra_p": 0.15
+      },
+      "severity": 2
+    },
+    {
+      "name": "WD_shift",
+      "kind": "shift",
+      "params": {
+        "shift_scale": 0.3
+      },
+      "severity": 3
+    },
+    {
+      "name": "WE_surrogate_corrupt",
+      "kind": "surrogate",
+      "params": {
+        "gamma": 0.5
+      },
+      "severity": 4
+    },
+    {
+      "name": "WF_nonlinear",
+      "kind": "nonlinear",
+      "params": {
+        "alpha": 0.6
+      },
+      "severity": 5
+    },
+    {
+      "name": "WH_subgroup_shift",
+      "kind": "subgroup_shift",
+      "params": {
+        "shift_scale": 0.35
+      },
+      "severity": 6
+    },
+    {
+      "name": "WI_prevalence_shift",
+      "kind": "prevalence_shift",
+      "params": {
+        "target_prev": 0.35
+      },
+      "severity": 7
+    },
+    {
+      "name": "WJ_concept_drift",
+      "kind": "concept_drift",
+      "params": {
+        "k": 3,
+        "shift_scale": 0.35
+      },
+      "severity": 8
+    },
+    {
+      "name": "WG_label_noise",
+      "kind": "label_noise",
+      "params": {
+        "eta": 0.1
+      },
+      "severity": 9
+    }
+  ],
+  "platform": {
+    "python": "3.11.16",
+    "system": "Windows",
+    "release": "10",
+    "machine": "AMD64"
+  },
+  "package_versions": {
+    "numpy": "2.4.6",
+    "pandas": "3.0.5",
+    "scikit-learn": "1.9.1",
+    "scipy": "1.17.1",
+    "matplotlib": "3.11.1",
+    "shap": "0.51.0"
+  },
+  "component_ablation": {
+    "S": [
+      "S_drop",
+      "S_ratio"
+    ],
+    "C": [
+      "C_exp",
+      "C_linear"
+    ],
+    "E": [
+      "E_cos",
+      "E_rank",
+      "E_jaccard",
+      "E_mix"
+    ]
+  },
+  "scoring": {
+    "weights_normalized": {
+      "R": 0.4000000000000001,
+      "S": 0.30000000000000004,
+      "C": 0.20000000000000004,
+      "E": 0.10000000000000002
+    },
+    "primary_S": "S_ratio",
+    "primary_C": "C_linear",
+    "E_missing": "renormalize",
+    "reference_variant": "S_ratio|C_linear|E_mix",
+    "E_excluded_world_kinds": [
+      "clean",
+      "label_noise",
+      "prevalence_shift"
+    ],
+    "paired_test_primary": "Nadeau-Bengio corrected resampled t-test, Holm-adjusted"
+  }
+}

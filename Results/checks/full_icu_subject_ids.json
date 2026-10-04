@@ -1,0 +1,7 @@
+{
+  "source": "MIMIC-IV-Full-2.2/icu/icustays.csv.gz (official v2.2 file, SHA-256 verified)",
+  "source_sha256": "b7d37536d4ce6f68feb3c5a89068bec34c5f03a573162df02bd57aec53b87c7d",
+  "source_rows": 73181,
+  "n_subjects": 50920,
+  "output_sha256": "1309de363b3921006741a034daa2495912816c1696a18bbecdd59f5baed61d5c"
+}

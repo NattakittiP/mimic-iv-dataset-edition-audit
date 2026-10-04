@@ -1,0 +1,5 @@
+model,world,weighted_L1,max_abs,n_bins_shared
+Logistic_L2,WI_prevalence_shift,0.3597676381718924,0.9684202523947089,14
+RandomForest,WI_prevalence_shift,0.34315661426256033,0.7537126865671642,10
+Logistic_L2,WA_clean,0.28991826772741053,0.9478210902889767,14
+RandomForest,WA_clean,0.18802176600527337,0.7110291584770319,11
