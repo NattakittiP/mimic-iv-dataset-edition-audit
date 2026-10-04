@@ -408,8 +408,6 @@ by (seed, null mode, draw index), so results do not depend on order, parallelism
 │   ├── 04_ppv/
 │   │   ├── run_ppv.py                  prevalence-standardized PPV
 │   │   └── compare_ppv.py
-│   └── 05_figures/
-│       └── make_figures.py             Figures 1 to 5 from Results/ only
 ├── Results/                    aggregate results of the reported runs (Section 8)
 └── figures/                    Figures 1 to 5 (PNG, 600 dpi), source data, manifest
 ```
