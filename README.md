@@ -32,6 +32,7 @@ file in [`Results/`](Results/), and the file is named next to the number.
 8. [Result files reference](#8-result-files-reference)
 9. [Reproducibility checks performed on this repository](#9-reproducibility-checks-performed-on-this-repository)
 10. [Data citations](#10-data-citations)
+11. [License](#11-license)
 
 ---
 
@@ -378,6 +379,7 @@ by (seed, null mode, draw index), so results do not depend on order, parallelism
 ```
 .
 ├── README.md
+├── LICENSE                     MIT
 ├── requirements.txt            pinned versions (pip)
 ├── environment.yml             pinned versions (conda)
 ├── MIMIC_Dataset/              empty: place the PhysioNet releases here (see its README)
@@ -681,3 +683,13 @@ If you use MIMIC data, cite the releases as required by PhysioNet:
   Database Demo (version 2.2). PhysioNet (2023). https://doi.org/10.13026/dp1f-ex47
 * Johnson, A., Bulgarelli, L., Pollard, T., Celi, L. A., Horng, S., and Mark, R. MIMIC-IV-ED Demo
   (version 2.2). PhysioNet (2023). https://doi.org/10.13026/jzz5-vs76
+
+---
+
+## 11. License
+
+The code in this repository is released under the [MIT License](LICENSE). The MIMIC-IV and MIMIC-IV-ED
+data are not part of this repository and remain under their PhysioNet licenses: the Demo releases under
+the Open Data Commons Open Database License v1.0, the Full releases under the PhysioNet Credentialed
+Health Data License 1.5.0. Anyone running the pipeline on the Full releases must hold their own
+credentialed access and follow the PhysioNet data use agreement.
