@@ -483,9 +483,6 @@ python Pipeline/03_compare_demo_vs_full/compare_rsce_vs_degradation.py --rsce_sc
 python Pipeline/03_compare_demo_vs_full/synthesize_cross_domain.py --hosp_compare_dir Results/compare/hosp --ed_compare_dir Results/compare/ed --outdir Results/compare/cross_domain
 python Pipeline/03_compare_demo_vs_full/trustworthiness_selection_regret.py --results Results
 python Pipeline/03_compare_demo_vs_full/rsce_rsc_rank_agreement.py --results Results
-
-# 4) figures
-python Pipeline/05_figures/make_figures.py --root . --outdir figures
 ```
 
 These commands overwrite the shipped files with recomputed ones. `git diff --stat Results` afterwards
