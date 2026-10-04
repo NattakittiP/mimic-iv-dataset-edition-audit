@@ -622,15 +622,9 @@ Trustworthiness folders (files ending `_prevmatched` are the prevalence-matched 
 | `Results/checks/full_icu_subject_ids.json` | provenance of the ICU patient list (source checksum, counts); the list itself is not shipped |
 | `Results/table1/table1_combined.csv`, `table1.md` | baseline characteristics of the four datasets |
 | `Results/environment_lock.json` | exact platform and package versions |
-| `figures/Fig*.png`, `figures/source_data/Fig*_source_data.csv`, `figures/figure_manifest.json` | figures, every plotted number with its source file, SHA-256 of inputs and outputs |
 
 Absolute paths of the original machine inside `run_info.json`, `ppv_run_info.json` and the subset-check
 files are replaced by `<PROJECT_ROOT>`. No other value in `Results/` is edited.
-
-The figures: Fig. 1 study design and cohorts; Fig. 2 RSCE on Full vs Demo and the ΔRSCE decomposition;
-Fig. 3 rank reproducibility; Fig. 4 prevalence-standardized PPV; Fig. 5 recovery of the Full-best model
-in the trustworthiness nulls. `make_figures.py` also writes PDF and TIFF versions; only PNG is included
-here.
 
 ---
 
